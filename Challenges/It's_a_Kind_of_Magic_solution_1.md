@@ -162,19 +162,19 @@ First round encryption showing areas of interest:
 
 Attack the first round Sbox:
 
-![First round Sbox](../Images/magic_sbox.jpg)
+![First round Sbox](../Images/magic_sbox.png)
 
 Sbox correlations over time:
 
-![Sbox correlations over time](../Images/magic_sbox_cot.jpg)
+![Sbox correlations over time](../Images/magic_sbox_cot.png)
 
 Sbox correlations versus traces:
 
-![Sbox correlations versus traces](../Images/magic_sbox_cvt.jpg)
+![Sbox correlations versus traces](../Images/magic_sbox_cvt.png)
 
 Results showing masked key bytes:
 
-![Results](../Images/magic_sbox_result.jpg)
+![Results](../Images/magic_sbox_result.png)
 
 Adjust alignment and reattack to get the first byte.
 

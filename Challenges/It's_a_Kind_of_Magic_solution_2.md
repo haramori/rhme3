@@ -50,11 +50,11 @@ First round encryption showing areas of interest:
 
 Attack the first round AddRoundkey:
 
-![First round AddRoundkey](../Images/magic_addroundkey.jpg)
+![First round AddRoundkey](../Images/magic_addroundkey.png)
 
 AddRoundkey byte 0 correlations over time:
 
-![AddRoundkey byte 0 correlations over time](../Images/magic_addroundkey_byte0_cot.jpg)
+![AddRoundkey byte 0 correlations over time](../Images/magic_addroundkey_byte0_cot.png)
 
 AddRoundkey trace with byte 0 points of interest:
 
@@ -62,11 +62,11 @@ AddRoundkey trace with byte 0 points of interest:
 
 AddRoundkey byte 0 correlations versus traces:
 
-![AddRoundkey byte 0 correlations versus traces](../Images/magic_addroundkey_byte0_cvt.jpg)
+![AddRoundkey byte 0 correlations versus traces](../Images/magic_addroundkey_byte0_cvt.png)
 
 Results showing mask byte 0:
 
-![Results, byte 0](../Images/magic_addroundkey_byte0_result.jpg)
+![Results, byte 0](../Images/magic_addroundkey_byte0_result.png)
 
 ### Attack Stage 3: Extract the key
 
