@@ -15,8 +15,8 @@ I'll be posting writeups here as I finish them.  Articles without a link are sti
 * Back to the future
 * Bluetooth Device Manager
 * CAN Opener
-* [It's a Kind of Magic, solution 1](It's_a_Kind_of_Magic_solution_1.md)
-* [It's a Kind of Magic, solution 2](It's_a_Kind_of_Magic_solution_2.md)
+* [It's a Kind of Magic, solution 1](Challenges/It's_a_Kind_of_Magic_solution_1.md)
+* [It's a Kind of Magic, solution 2](Challenges/It's_a_Kind_of_Magic_solution_2.md)
 * Phonic Frenzy
 * Race of a Lifetime
 * [Ransom 2.0](Challenges/Ransom_2.0.md)
