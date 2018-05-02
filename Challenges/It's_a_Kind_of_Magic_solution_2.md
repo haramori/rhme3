@@ -27,20 +27,20 @@ Here's the procedure using ChipWhisperer Analyzer:
 
 Set up a CPA attack for AES-128 as you normally would, then make these adjustments:
 * Set the Hardware Model to HW: AddRoundKey Output, First Round (Enc).
-** Note: We're actually attacking the input to AddRoundKey, but it's the right leakage model for recovering the mask.
+  * Note: We're actually attacking the input to AddRoundKey, but it's the right leakage model for recovering the mask.
 * Apply rough alignment using sum of difference on the three large peaks prior to the AddRoundKey section.
 * Apply a digital filter: Butterworth, low pass, critical frequency 0.25, order 5.
 
 Then attack each individual byte (N) of the mask as follows:
 * Apply fine alignment (any algorithm is okay) focused around where the Nth byte of AddRoundKey is processed.
 * Limit the attack range only to where the Nth byte of AddRoundKey is porcessed.
-** Note: If needed, Output vs Point Plot can help you find the right area to focus on.
+  * Note: If needed, Output vs Point Plot can help you find the right area to focus on.
 * Attack only the Nth subkey
 * Perform the attack.
 * The attack result will give you a pair of byte values with the same correlation.  Incidentally, these two values are one's complements of each other (bitwise complements).  Determine which is the correct mask byte value as follows:
-** Choose one of these values and enter it in the Nth position of Results>Highlighted Key>Override.
-** Rerun the attack.
-** Display the Nth byte in Output vs Point Plot.  The red line represents the byte value entered into the known key.  If it peaks into negative correlations, then you have the correct mask byte value.  If the red line peaks into positive correlations, the other value is the correct mask byte value.
+  * Choose one of these values and enter it in the Nth position of Results>Highlighted Key>Override.
+  * Rerun the attack.
+  * Display the Nth byte in Output vs Point Plot.  The red line represents the byte value entered into the known key.  If it peaks into negative correlations, then you have the correct mask byte value.  If the red line peaks into positive correlations, the other value is the correct mask byte value.
 
 All sixteen mask bytes were successfully recovered using this process.  Following are screenshots showing the CPA attack process in ChipWhisperer Analyzer.
 
