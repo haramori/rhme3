@@ -19,6 +19,8 @@ The leakage model for the masked key should therefore be:
 	HW:SboxOutput = hamming_weight(sbox(PT_byte ^ mask_byte ^ key_byte))
 	HW:SboxOutput = hamming_weight(sbox(PT_byte ^ masked_key))
 
+So HW:SboxOutput can be used to reveal the masked key.
+
 This solution also relies on the lack of padding used by the encryption/decryption process, which can be leveraged to reveal the mask by using carefully crafted input.
 
 This will be a three stage attack:

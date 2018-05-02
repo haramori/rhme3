@@ -21,6 +21,8 @@ The mask has the same leakage model as a key would normally have as the output o
 	Normal encryption: HW:AddRoundkey = hamming_weight(pt_byte ^ key_byte)
 	This challenge:    HW:AddRoundkey = hamming_weight(pt_byte ^ mask_byte)
 
+So HW:AddRoundkey can be used to reveal the mask.
+
 However, to make the attack work careful attention needs to be placed on alignment and limiting the range of the attack.
 
 Here's the procedure using ChipWhisperer Analyzer:
