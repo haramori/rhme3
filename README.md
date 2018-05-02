@@ -1,4 +1,4 @@
-# Riscure RHme3 CTF writeups
+# RHme3 CTF writeups
 
 [RHme3](https://rhme.riscure.com/3/news) (RHme 2017) is an automotive CTF created by [Riscure](https://www.riscure.com/) and [Argus Cyber Security](https://argus-sec.com/).
 
