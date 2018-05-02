@@ -15,6 +15,7 @@ The device expects 18 bytes of input: the first byte should be either 0xAE (for 
 This solution is based on the assumption that the mask is a semi-random 128 bit number that is XORed with both the input prior to the cipher block and the output after the cipher block.
 
 The leakage model for the key should therefore be:
+
 	SboxOutput = sbox(PT_byte ^ mask_byte ^ key_byte)
 	or equivalently as: SboxOutput = sbox(PT_byte ^ masked_key)
 
@@ -115,7 +116,9 @@ The following Python3 script accomplishes this stage of the attack.
 
 	# Step 1: Load mask into input buffer.
 	pt1 = [0x00 for a in range(16)]
-	#pt1[8] = 0x01  # Setting any bit in pt will swap the state of the corresponding bit in the result, indicating XOR.
+	# Setting any bit in pt will swap the state of the corresponding bit in the result.
+	# This indicates/confirms that XOR is used to add the mask to the input.
+	#pt1[8] = 0x01
 	ct = enc(pt1)
 
 	# Step 2: Leak input buffer.
@@ -180,6 +183,7 @@ Adjust alignment and reattack to get the first byte.
 Note: Remember not to reset the RHme3 board until after you get a known ciphertext.  Doing so will reset the mask and you'll have to redo the entire attack from the start.
 
 The following Python3 script brute forces the first two bytes of the mask and recovers the key.  To do this, an implementation of AES is needed in which you can encrypt a single block of 16 bytes without padding.  I have my own implementation of AES that for export control reasons I cannot share.  I used my own because the state of AES implementations in Python3 is not happy.  Your mileage may vary.
+
 	import sys
 	sys.path.append("E:\\Tech\\mylib")
 	from myaes import AES
@@ -195,7 +199,8 @@ The following Python3 script brute forces the first two bytes of the mask and re
 	# Step 2: Encrypt all zero message on RHme3 board to establish a known ciphertext.
 	known_ciphertext = [0x27,0x8d,0x9e,0x23,0x74,0xd3,0x41,0x06,0xdb,0x84,0x83,0xdc,0x60,0x19,0x75,0x32]
 
-	# Step 3: Replicate encryption process, but brute force first two mask bytes until the ciphertext matches.
+	# Step 3: Replicate the encryption process, but brute force the first two mask bytes
+	#   until the ciphertext matches.
 	a = AES(128)
 	for mask_byte0 in range(256):
 		print('mask byte 0:',hex(mask_byte0))
@@ -211,6 +216,7 @@ The following Python3 script brute forces the first two bytes of the mask and re
 				sys.exit()
 
 And finally, here's the script output with the resulting mask and key.
+
 	$ python3 get-mask-myaes.py
 	mask byte 0: 0x0
 	mask byte 0: 0x1

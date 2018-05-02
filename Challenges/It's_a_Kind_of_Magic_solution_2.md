@@ -17,6 +17,7 @@ Follow all of the steps in solution 1, except to replace the first and last stag
 ### Attack Stage 1: Reveal the mask
 
 The mask has the same leakage model as a key would normally have as the output of AddRoundKey.  It is simply XORed with the plaintext.  In other words, these two models are the same:
+
 	Normal encryption: hamming_weight(pt_byte ^ key_byte)
 	This challenge: hamming_weight(pt_byte ^ mask_byte)
 
