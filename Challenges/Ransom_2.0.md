@@ -8,9 +8,13 @@ In theory, this firmware mod was supposed to give you 30% extra horsepower and t
 
 ## Solution
 
-To solve this challenge, you need to think about the nature of ransomware and how it works.  The ransomware needs to know something specific about your hardware so it keeps your unlock code unique to your device.  This keeps you from sharing your unlock code with others.
+### Overview 
 
-The solution to this challenge depends on having a similar device that you control.  Even though we have an unencrypted binary for analysis, the solution to this challenge does not require any code analysis.
+The solution to this challenge depends on two things:
+* Find a unique feature of your device that the unlock code is based on.
+* Set up an alterate device that can be used to generate unlock codes.  This should be another MCU of the same type (XMEGA-A4U), programmed with the unencrypted binary, and under hardware debugger control.
+
+Once these two things are in hand, the solution is to reverse engineer the unique device feature from the rhme3 board and feed it into the alternate device to generate the unlock code.
 
 ### Debugging setup
 
