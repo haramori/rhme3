@@ -133,7 +133,7 @@ The following Python3 script accomplishes this stage of the attack.
 
 ### Attack Stage 2: Reveal the masked key
 
-Note: Remember not to reset the RHme3 board now or at any time during the CPA attack.  Doing so will reset the mask and you'll have to redo the entire attack from the start.
+*Note: Remember not to reset the RHme3 board now or at any time during the CPA attack.  Doing so will reset the mask and you'll have to redo the entire attack from the start.*
 
 This is a straightforward CPA attack using the ChipWhisperer Lite.
 
@@ -180,9 +180,11 @@ Adjust alignment and reattack to get the first byte.
 
 ### Attack Stage 3: Extract the key
 
-Note: Remember not to reset the RHme3 board until after you get a known ciphertext.  Doing so will reset the mask and you'll have to redo the entire attack from the start.
+*Note: Remember not to reset the RHme3 board until after you get a known ciphertext.  Doing so will reset the mask and you'll have to redo the entire attack from the start.*
 
 The following Python3 script brute forces the first two bytes of the mask and recovers the key.  To do this, an implementation of AES is needed in which you can encrypt a single block of 16 bytes without padding.  I have my own implementation of AES that for export control reasons I cannot share.  I used my own because the state of AES implementations in Python3 is not happy.  Your mileage may vary.
+
+Note: It is strongly recommended that you **do not implement** your own crypto for production code.  However, I recommend that you **do implement** your own crypto for instructional and analytic purposes.  You will learn a lot from doing so and have the benefit of CTF-ready crypto that is completely under your control.
 
 	import sys
 	sys.path.append("E:\\Tech\\mylib")
@@ -234,8 +236,6 @@ And finally, here's the script output with the resulting mask and key.
 	mask byte 0: 0x5b
 	Mask: [0x5b,0x0b,0x26,0x35,0x0c,0xe7,0x4d,0x77,0x33,0xbc,0x6f,0x73,0x38,0x67,0x0b,0x6b]
 	Key:  [0x06,0x93,0xe4,0x5a,0xf5,0x7b,0xee,0x8e,0xe5,0x79,0x15,0x75,0xd5,0x43,0xe2,0x67]
-
-Note: It is strongly recommended that you not implement your own crypto for production code.  However, I recommend that you do implement your own crypto for instructional and analytic purposes.  You will learn a lot from doing so and have the benefit of crypto that is completely under your control.
 
 ## References
 
