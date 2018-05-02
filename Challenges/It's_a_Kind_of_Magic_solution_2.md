@@ -12,9 +12,9 @@ The device expects 18 bytes of input: the first byte should be either 0xAE (for 
 
 This solution is mostly the same as [solution 1](It's_a_Kind_of_Magic_solution_1.md).  The only difference is in how we get the mask.
 
-Follow all of the steps in solution 1, except to replace the first and last stages of attack as follows.
+### Solution overview
 
-### Attack Stage 1: Reveal the mask
+Follow all of the steps in solution 1, except to replace the first and last stages of attack as follows.
 
 The mask has the same leakage model as a key would normally have as the output of AddRoundKey.  It is simply XORed with the plaintext.  In other words, these two models are the same:
 
@@ -24,6 +24,8 @@ The mask has the same leakage model as a key would normally have as the output o
 So HW:AddRoundkey can be used to reveal the mask.
 
 However, to make the attack work careful attention needs to be placed on alignment and limiting the range of the attack.
+
+### Attack Stage 1: Reveal the mask
 
 Here's the procedure using ChipWhisperer Analyzer:
 
