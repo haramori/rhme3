@@ -17,7 +17,7 @@ This solution is based on the assumption that the mask is a semi-random 128 bit 
 The leakage model for the key should therefore be:
 
 	SboxOutput = sbox(PT_byte ^ mask_byte ^ key_byte)
-	or equivalently as: SboxOutput = sbox(PT_byte ^ masked_key)
+	SboxOutput = sbox(PT_byte ^ masked_key)
 
 This solution also relies on the lack of padding used by the encryption/decryption process, which can be leveraged to reveal the mask by using carefully crafted input.
 
