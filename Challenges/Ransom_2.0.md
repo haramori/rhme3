@@ -87,7 +87,7 @@ Perform all of the following with the unencrypted binary on a device under your 
 * Set a data breakpoint on one of the production signature memory locations (0x0D66) and run the debugger up to that point.
 * Single step until all of the production signature bytes are copied into RAM (at 0x3FD4-0x3FDE).
 * Manually overwrite the production signature bytes in RAM with the production signature bytes decoded from the RHme3 board user ID.
-* Continue the debugger.  The device under your control will calculate the unlock code for the RHme3 board.
+* Continue the debugger.  The device under your control will calculate the unlock code for the RHme3 board.  Copy it from RAM (at 0x3F67-0x3F76).
 
 Now enter the unlock code into the RHme3 board and get the flag.  It couldn't have been easier.
 
