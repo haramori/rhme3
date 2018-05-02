@@ -14,10 +14,10 @@ The device expects 18 bytes of input: the first byte should be either 0xAE (for 
 
 This solution is based on the assumption that the mask is a semi-random 128 bit number that is XORed with both the input prior to the cipher block and the output after the cipher block.
 
-The leakage model for the key should therefore be:
+The leakage model for the masked key should therefore be:
 
-	SboxOutput = sbox(PT_byte ^ mask_byte ^ key_byte)
-	SboxOutput = sbox(PT_byte ^ masked_key)
+	HW:SboxOutput = hamming_weight(sbox(PT_byte ^ mask_byte ^ key_byte))
+	HW:SboxOutput = hamming_weight(sbox(PT_byte ^ masked_key))
 
 This solution also relies on the lack of padding used by the encryption/decryption process, which can be leveraged to reveal the mask by using carefully crafted input.
 
