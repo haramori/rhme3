@@ -63,21 +63,25 @@ Load the encrypted binary onto the RHme3 board, and it gives a user ID (such as 
 
 Load the unencrypted binary onto the XMEGA-A4U device that you control, and it gives a different user ID (such as 3439350305001500).
 
-Analyze the unencrypted binary on the device under your control using a PDI programmer, and view the production sigantures of the chip.  These are fully described in section 4.17 of the XMEGA AU MANUAL [2].  The following components of the production signature correspond with the user ID (depicted as big endian):
+Analyze the unencrypted binary on the device under your control using a PDI programmer, and view the production sigantures of the chip.  These are fully described in section 4.17 of the XMEGA AU MANUAL [2].  Examine the following components of the production signature:
 
 	Registers 3-5 of the lot number: 0x343935
 	Wafer number: 0x03
 	Coord X: 0x0500
 	Coord Y: 0x1500
 
+A careful look reveals that these are all of the bytes of the user ID.
+
 ### Attack
 
-Get the user ID from the RHme3 board, and decode into the production signature bytes.
+Decode the user ID from the RHme3 board as follows:
 
 	Registers 3-5 of the lot number: 0x383532
 	Wafer number: 0x07
 	Coord X: 0x1F00
 	Coord Y: 0x1200
+
+Now you have the production signature bytes for the RHme3 board.
 
 Perform all of the following with the unencrypted binary on a device under your control:
 * Set a data breakpoint on one of the production signature memory locations (0x0D66) and run the debugger up to that point.
