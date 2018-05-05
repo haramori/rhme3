@@ -60,7 +60,7 @@ AddRoundkey byte 0 correlations over time:
 
 ![AddRoundkey byte 0 correlations over time](../Images/magic_addroundkey_byte0_cot.png)
 
-AddRoundkey trace with byte 0 points of interest:
+AddRoundkey trace with byte 0 leakage points:
 
 ![AddRoundkey trace with byte 0 points of interest](../Images/magic_addroundkey_byte0_trace_LI.jpg)
 
