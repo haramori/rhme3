@@ -55,14 +55,14 @@ Make the following connections:
 
 ![Double CAN Hookup](../Images/can_hookup_double.jpg)
 
-With the two channels disconnected, traffic goes quiet.  With the use of candump, temporarily jumpering the two channels to create bursts of traffic, and monitoring each channel individually, the originating channel of CAN ID 23 can be determined as channel 1.
+With the two channels separated from each other, traffic goes quiet.  With the use of candump, temporarily jumpering the two channels to create bursts of traffic, and monitoring each channel individually, the originating channel of CAN ID 23 can be determined as channel 1.
 
 	$ candump -L can0
 	$ candump -L can1
 
 ### Attack
 
-Add the following script to the Beaglebone Black, as can-gate.py:
+The following Python3 script can be run on the BBB to pass all traffic from channel 1 to channel 2, and rewrite all packets with CAN ID 23 for 88 mph.
 
 	#!/usr/bin/python3
 
@@ -96,6 +96,6 @@ Run the script as follows:
 
 	$ python3 can-gate.py can0 can1
 
-This passes all traffic from channel 1 to channel 2 and rewrites all packets with CAN ID 23 for 88 mph.  This pegs the dashboard at 88 mph and displays the flag.
+This pegs the dashboard at 88 mph and displays the flag.
 
 ![Back to the Future Dashboard with FLAG](../Images/future_dashboard.png)
