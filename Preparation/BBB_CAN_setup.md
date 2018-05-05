@@ -100,5 +100,5 @@ These are the CAN-related tools that are immediately available on the BBB:
 
 ## References
 
-[embedded-things.com: Enable CANbus on the Beaglebone Black](http://www.embedded-things.com/bbb/enable-canbus-on-the-beaglebone-black/)
-[electronics.stackexchange.com: Beaglebone Black CAN bus Setup](https://electronics.stackexchange.com/questions/195416/beaglebone-black-can-bus-setup)
+* [embedded-things.com: Enable CANbus on the Beaglebone Black](http://www.embedded-things.com/bbb/enable-canbus-on-the-beaglebone-black/)
+* [electronics.stackexchange.com: Beaglebone Black CAN bus Setup](https://electronics.stackexchange.com/questions/195416/beaglebone-black-can-bus-setup)
