@@ -7,7 +7,7 @@ I'll be posting writeups here as I finish them.  Articles without a link are sti
 ## Preparation
 
 * RHme3 board analysis and preparation
-* Beaglebone Black CAN and GPIO preparation
+* [Beaglebone Black CAN setup](Preparation/BBB_CAN_setup.md)
 * Atmel Studio and Atmel ICE procedures
 
 ## Solved challenges
