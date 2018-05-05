@@ -8,7 +8,7 @@ In theory, this firmware mod was supposed to give you 30% extra horsepower and t
 
 ## Solution
 
-### Overview 
+### Solution overview
 
 The solution to this challenge depends on two things:
 * Find a unique feature of your device that the unlock code is based on.
