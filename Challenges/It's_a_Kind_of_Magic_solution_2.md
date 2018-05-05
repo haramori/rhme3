@@ -25,6 +25,11 @@ So HW:AddRoundkey can be used to reveal the mask.
 
 However, to make the attack work careful attention needs to be placed on alignment and limiting the range of the attack.
 
+As in solution 1, this will be a three stage attack:
+* Perform a CPA attack to reveal the mask.
+* Perform a CPA attack on the sbox output to reveal the masked key.
+* XOR the mask with the masked key to reveal the key itself.
+
 ### Attack Stage 1: Reveal the mask
 
 Here's the procedure using ChipWhisperer Analyzer:

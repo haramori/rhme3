@@ -24,8 +24,8 @@ So HW:SboxOutput can be used to reveal the masked key.
 This solution also relies on the lack of padding used by the encryption/decryption process, which can be leveraged to reveal the mask by using carefully crafted input.
 
 This will be a three stage attack:
+* Perform an exploit attack to reveal the mask.
 * Perform a CPA attack on the sbox output to reveal the masked key.
-* Perform an attack to reveal the mask.
 * XOR the mask with the masked key to reveal the key itself.
 
 ### Hardware setup
