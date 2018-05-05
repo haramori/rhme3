@@ -20,7 +20,7 @@ The solution to this challenge is basically to identify which CAN ID controls do
 
 ### Preparation
 
-If you haven't done so already, follow the [Beaglebone Black CAN preparation](../Preparation/BBB_CAN_prep.md) guide to get ready for working with CAN bus.
+If you haven't done so already, follow the [Beaglebone Black CAN preparation](../Preparation/BBB_CAN_setup.md) guide to get ready for working with CAN bus.
 
 Make the following connections:
 * Connect the two ECUs on the RHme3 board using jumpers.
