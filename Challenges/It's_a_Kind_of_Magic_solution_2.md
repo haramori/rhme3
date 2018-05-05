@@ -30,6 +30,8 @@ As in solution 1, this will be a three stage attack:
 * Perform a CPA attack on the sbox output to reveal the masked key.
 * XOR the mask with the masked key to reveal the key itself.
 
+Unlike solution 1, you don't have to be careful about resetting the board in this solution.  You collect all of the traces once, and you're done with the board.
+
 ### Attack Stage 1: Reveal the mask
 
 Here's the procedure using ChipWhisperer Analyzer:
@@ -76,6 +78,10 @@ AddRoundkey byte 0 correlations versus traces:
 Results showing mask byte 0:
 
 ![Results, byte 0](../Images/magic_addroundkey_byte0_result.png)
+
+### Attack Stage 2: Reveal the masked key
+
+Follow Attack Stage 2 in [solution 1](It's_a_Kind_of_Magic_solution_1.md).  It's the same.
 
 ### Attack Stage 3: Extract the key
 
