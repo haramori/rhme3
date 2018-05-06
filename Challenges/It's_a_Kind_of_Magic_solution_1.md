@@ -195,7 +195,7 @@ Note: It is strongly recommended that you **do not implement** your own crypto f
 	def dump(l):
 		return '[0x' + ',0x'.join([format(a,'02x') for a in l]) + ']'
 
-	# Step 1: Establish what is known from the previous attack stages (bytes 2 thru 15).
+	# Step 1: Establish what is known from the previous attack stages.
 	known_mask = [0x26,0x35,0x0c,0xe7,0x4d,0x77,0x33,0xbc,0x6f,0x73,0x38,0x67,0x0b,0x6b]
 	masked_key = [0x5d,0x98,0xc2,0x6f,0xf9,0x9c,0xa3,0xf9,0xd6,0xc5,0x7a,0x06,0xed,0x24,0xe9,0x0c]
 	known_key = [p ^ q for p,q in zip(masked_key[2:16],known_mask)]
@@ -211,8 +211,10 @@ Note: It is strongly recommended that you **do not implement** your own crypto f
 		for mask_byte1 in range(256):
 			test_mask = [mask_byte0,mask_byte1] + known_mask
 			test_key = [masked_key[0] ^ mask_byte0,masked_key[1] ^ mask_byte1] + known_key
-			# Skipped a step here: Assume masked all zero input is same as the mask itself.
+			# Apply mask to input
+			# ...which is just the mask itself for all zero msg so we can skip this step
 			test_ciphertext = a._crypt(test_mask,test_key,False,'ECB',None,False)
+			# Apply mask to output
 			masked_ciphertext = [p ^ q for p,q in zip(test_ciphertext,test_mask)]
 			if (masked_ciphertext == known_ciphertext):
 				print('Mask:',dump(test_mask))
