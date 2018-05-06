@@ -65,6 +65,6 @@ Cut the trace connecting the two pins of JP4, as follows:
 * Turn board over.  The trace to cut is on the back of the board.
 * Gently score the trace with a hobby knife until the continuity tone stops.
 
-For normal use: Put a jumper onto JP4.
+For normal use: Put a jumper onto the header pins at JP4.
 
 For SCA/FI: replace the jumper at JP4 with a shunt circuit.
