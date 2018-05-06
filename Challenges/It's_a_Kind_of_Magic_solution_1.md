@@ -32,7 +32,7 @@ This will be a three stage attack:
 
 This solution is based on using the [ChipWhisperer Lite](https://newae.com/tools/chipwhisperer/).
 
-If you haven't done so already, prepare the RHme3 board for side channel analysis according to the [RHme3 board preparation](../Preparation/RHme3_board_prep.md) guide.
+If you haven't done so already, prepare the RHme3 board for side channel analysis according to the RHme3 board setup guide (pending).
 
 Replace the jumper at JP4 with a 4x4 breadboard, wired as follows:
 * Measurement pin at UC
@@ -184,7 +184,7 @@ Adjust alignment and reattack to get the first byte.
 
 *Note: Remember not to reset the RHme3 board until after you get a known ciphertext.  Doing so will reset the mask and you'll have to redo the entire attack from the start.*
 
-The following Python3 script brute forces the first two bytes of the mask and recovers the key.  To do this, an implementation of AES is needed in which you can encrypt a single block of 16 bytes without padding.  I have my own implementation of AES that for export control reasons I cannot share.  I used my own because the state of AES implementations in Python3 is not happy.  Your mileage may vary.
+The key can be recovered by XORing the mask with the masked key.  However, the first two bytes of the mask need to be brute forced.  The following Python3 script accomplishes this by encrypting a message repeatedly, with masking, until it matches the same message encrypted by the RHme3 board.  To do this, an implementation of AES is needed in which you can encrypt a single block of 16 bytes without padding.  I have my own implementation of AES that for export control reasons I cannot share.  I used my own because the state of AES implementations in Python3 is not happy.  Your mileage may vary.
 
 Note: It is strongly recommended that you **do not implement** your own crypto for production code.  However, I recommend that you **do implement** your own crypto for instructional and analytic purposes.  You will learn a lot from doing so and have the benefit of CTF-ready crypto that is completely under your control.
 
