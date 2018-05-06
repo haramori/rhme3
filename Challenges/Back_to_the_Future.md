@@ -22,7 +22,7 @@ The solution to this challenge involves identifying and rewriting CAN packets th
 ### Preparation
 
 If you haven't done so already, prepare your boards for working with CAN using these guides:
-* [RHme3 board analysis and preparation](Preparation/RHme3_board_analysis.md)
+* [RHme3 board analysis and preparation](../Preparation/RHme3_board_analysis.md)
 * [Beaglebone Black CAN setup](../Preparation/BBB_CAN_setup.md)
 
 Make the following connections:
