@@ -15,7 +15,7 @@
 * [MCP25625 Support](http://www.microchip.com/wwwproducts/en/MCP25625#1)
 * [MCP25625 CAN Controller with Integrated Transceiver Datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/20005282B.pdf)
 
-## Jumpers
+## Headers and jumpers
 
 * Arduino Uno R3
 * PDI (labeled "ICSP")
@@ -31,7 +31,7 @@ The XMEGA does not use an external crystal/resonator.  The internal oscillator i
 
 The XMEGA communicates with the CAN controllers using SPI.
 
-XMEGA does not support ICSP.  The port labeled "ICSP" is actually a PDI port.  You will need a programmer/debugger that supports PDI in order to use this port (e.g. Atmel ICE).  You don't need PDI for the CTF, but this port has extra pins for ground and reset that may be useful.
+XMEGA does not support ICSP.  The port labeled "ICSP" is actually a PDI port.  You will need a programmer/debugger that supports PDI in order to use this port (e.g. Atmel ICE).  Note: Not used for CTF.
 
 ## Avrdude preparation
 
