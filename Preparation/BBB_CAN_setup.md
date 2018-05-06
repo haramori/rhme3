@@ -8,9 +8,12 @@ You will need a Linux version for your BBB with *all* of the following:
 * BBB device tree source that matches your kernel version
 * Kernel version includes SocketCAN
 * Python 3.3
-* can-utils
+* can-utils package
+* CAN transcievers
 
-For reference, I used Kali Linux 2017.01 (a flavor of Debian) with kernel version 4.1.30.
+For reference, I used the following:
+* Kali Linux 2017.01 (a flavor of Debian) with kernel version 4.1.30
+* Carloop CAN Hitch (transciever)
 
 ## Device tree setup
 
