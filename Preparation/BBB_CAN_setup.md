@@ -9,7 +9,8 @@ You will need a Linux version for your BBB with *all* of the following:
 * Kernel version includes SocketCAN
 * Python 3.3
 * can-utils package
-* CAN transcievers
+
+The BBB includes built-in CAN controllers, but you will need CAN transcievers to handle the wire-level protocol.
 
 For reference, I used the following:
 * Kali Linux 2017.01 (a flavor of Debian) with kernel version 4.1.30
@@ -81,7 +82,7 @@ Note: There is no consistent mapping between DCAN devices and can interface numb
 
 Note: Unlike making UART connections, connect RX on the BBB to RX on a CAN transciever, likewise matching TX to TX.
 
-Wiring CAN bus is beyond the scope of this article.  There are plenty of resources out there that describe how to do this.  It basically involves twisted pair wiring, matching high and low differential lines, and termination resistors.
+Wiring CAN bus is beyond the scope of this article.  There are plenty of resources out there that describe how to do this.  It basically involves twisted pair wiring, matching up high and low differential lines, and termination resistors.
 
 Once you get everything connected, it should look something like this.
 
