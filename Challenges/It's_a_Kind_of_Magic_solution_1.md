@@ -32,7 +32,7 @@ This will be a three stage attack:
 
 This solution is based on using the [ChipWhisperer Lite](https://newae.com/tools/chipwhisperer/).
 
-If you haven't done so already, prepare the RHme3 board for side channel analysis according to the RHme3 board setup guide (pending).
+If you haven't done so already, prepare the RHme3 board for side channel analysis according to the [RHme3 board analysis and preparation](Preparation/RHme3_board_analysis.md) guide.
 
 Replace the jumper at JP4 with a 4x4 breadboard, wired as follows:
 * Measurement pin at UC

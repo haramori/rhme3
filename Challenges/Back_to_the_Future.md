@@ -21,7 +21,9 @@ The solution to this challenge involves identifying and rewriting CAN packets th
 
 ### Preparation
 
-If you haven't done so already, follow the [Beaglebone Black CAN preparation](../Preparation/BBB_CAN_setup.md) guide to get ready for working with CAN bus.
+If you haven't done so already, prepare your boards for working with CAN using these guides:
+* [RHme3 board analysis and preparation](Preparation/RHme3_board_analysis.md)
+* [Beaglebone Black CAN setup](../Preparation/BBB_CAN_setup.md)
 
 Make the following connections:
 * For now, connect the two ECUs on the RHme3 board using jumpers.  We'll remove these later to separate the two channels.
