@@ -50,6 +50,10 @@ To support independant CAN channels, cut the traces connecting the two CAN chann
 * Put the black header base back onto the jumper pins.
 * Repeat all steps with CAN L.
 
+To operate connected ECUs: Put a jumper on the header pins across each trace that you cut.
+
+To operate disconnected ECUs: Remove the jumpers.
+
 ![Cutting CAN trace](../Images/cutting_can_trace.jpg)
 
 ## SCA/FI preparation
