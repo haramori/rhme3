@@ -18,35 +18,7 @@ Once these two things are in hand, the solution is to reverse engineer the uniqu
 
 ### Debugging setup
 
-For this solution, you will need another AVR XMEGA-A4U and a hardware debugging setup.
-* XMEGA-A4U chip on TQFP-44 breakout board
-* Atmel ICE PDI programmer
-* Atmel Studio 7
-* 3.3V USB to serial adapter
-
-The only discrete components needed for wiring up the MCU are four 100 pF decoupling capacitors.  Anything else you wish to add is optional (e.g. blinky lights).  A crystal/resonator is not needed.  The Riscure challenge uses the internal oscillator on the MCU.
-
-You'll need to connect the following pins on the XMEGA:
-* 8,18,30,38: GND
-* 9,19,31,39: 3V3
-* 12: USARTC0 RX
-* 13: USARTC0 TX
-* 34: PDI Data
-* 35: PDI CLock
-
-You'll need to connect the following pins on the Atmel ICE:
-* 2: GND
-* 3: PDI Data
-* 4: Vref (connected to 3V3: sensing, not supplying voltage)
-* 6: PDI CLock
-
-The pinout is given in section 2 of the XMEGA A4U Datasheet [1].
-
-Here's what it should look like when you put it all together.
-
-![XMEGA under your control](../Images/XMEGA_under_my_control.jpg)
-
-Note: An article describing how to load an unencrypted HEX binary into Atmel Studio 7 and run a hardware debugging session is pending.
+Follow the [Debugging AVR XMEGA raw binaries](../Preparation/debugging_raw_binaries.md) guide to set up the second XMEGA device.
 
 ### Analysis
 
