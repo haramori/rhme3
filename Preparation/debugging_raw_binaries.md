@@ -58,31 +58,31 @@ Do the following to convert and disassemble a HEX file:
 Do the following to load a HEX file into Atmel Studio 7 and debug it on an XMEGA:
 
 1. Create the project as follows:
-  a. Select the menu item: File > Open > Open Object File For Debugging.
-  b. Select the HEX file and name the project, then click Next.
-  c. Select XMEGAA, then select ATxmega128A4U, then click Finish.
+  * Select the menu item: File > Open > Open Object File For Debugging.
+  * Select the HEX file and name the project, then click Next.
+  * Select XMEGAA, then select ATxmega128A4U, then click Finish.
 
 ![AS7 Open Object File 1 of 2](../Images/as7_open_object_file_1.png)
 
 ![AS7 Open Object File 2 of 2](../Images/as7_open_object_file_2.png)
 
 2. Program the device as follows:
-  a. Select the menu item: Tools > Device Programming.
-  b. Select the following: Tool = Atmel-ICE, Device = ATxmega128A4U, Interface = PDI, then click Apply.
-  c. Click Read and verify that you get a device signature and the correct target voltage.
-  d. Go to the Memories tab.
-  e. Select the HEX file in the flash section, and click Program.
-  f. Ensure that you get "Verifying Flash...OK", then click Close.
+  * Select the menu item: Tools > Device Programming.
+  * Select the following: Tool = Atmel-ICE, Device = ATxmega128A4U, Interface = PDI, then click Apply.
+  * Click Read and verify that you get a device signature and the correct target voltage.
+  * Go to the Memories tab.
+  * Select the HEX file in the flash section, and click Program.
+  * Ensure that you get "Verifying Flash...OK", then click Close.
 
 ![AS7 Device Programming 1 of 2](../Images/as7_device_programming_1.png)
 
 ![AS7 Device Programming 2 of 2](../Images/as7_device_programming_2.png)
 
 3. Adjust the project for hardware debugging as follows:
-  a. Select the menu item: Project > Properties.
-  b. Go to the Tool tab.
-  c. Select Debugger/Programmer = Atmel-ICE and Interface = PDI.
-  d. Set Programming settings = Skip programming.
+  * Select the menu item: Project > Properties.
+  * Go to the Tool tab.
+  * Select Debugger/Programmer = Atmel-ICE and Interface = PDI.
+  * Set Programming settings = Skip programming.
 
 ![AS7 Project Properties](../Images/as7_project_properties.png)
 
