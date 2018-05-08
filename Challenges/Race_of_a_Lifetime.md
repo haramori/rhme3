@@ -22,7 +22,7 @@ There are two possible approaches for calculating hourly check-ins:
 * Calculate each hourly check-in by dividing a segment by the allowable number of hours for completing that segment.
 * Calculate each hourly check-in by using the best allowable speed for each mode of transportation.  This may get you there a bit faster, so I chose this method for my solution.
 
-Both options require that you know the overall distance of a segment.  The distance between two GPS coordinates can be calculated using the Haversine formula [https://en.wikipedia.org/wiki/Haversine_formula].
+Both options require that you know the overall distance of a segment.  The distance between two GPS coordinates can be calculated using the [Haversine formula ](https://en.wikipedia.org/wiki/Haversine_formula).
 
 For the fastest speed approach, the following speeds seem to work best:
 
