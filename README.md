@@ -13,7 +13,7 @@ I'll be posting writeups here as I finish them.  Articles without a link are sti
 ## Solved challenges
 
 * [Back to the future](Challenges/Back_to_the_Future.md)
-* Bluetooth Device Manager
+* [Bluetooth Device Manager](Challenges/Bluetooth_Device_Manager.md)
 * [CAN Opener](Challenges/CAN_Opener.md)
 * [It's a Kind of Magic, solution 1](Challenges/It's_a_Kind_of_Magic_solution_1.md)
 * [It's a Kind of Magic, solution 2](Challenges/It's_a_Kind_of_Magic_solution_2.md)
