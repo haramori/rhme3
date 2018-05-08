@@ -8,7 +8,7 @@ I'll be posting writeups here as I finish them.  Articles without a link are sti
 
 * [RHme3 board analysis and preparation](Preparation/RHme3_board_analysis.md)
 * [Beaglebone Black CAN setup](Preparation/BBB_CAN_setup.md)
-* Atmel Studio and Atmel ICE procedures
+* [Debugging AVR XMEGA raw binaries](Preparation/Debugging AVR XMEGA raw binaries.md)
 
 ## Solved challenges
 
