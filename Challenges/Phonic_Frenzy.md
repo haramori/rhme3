@@ -22,7 +22,7 @@ Analog signals are found on pins D7 and D8.  The signals look identical.
 
 When D7 is plugged into a powered speaker, a message is heard giving the flag.  It's difficult to discern some of the hex digits spoken by the synthetic voice.  However, this can be resolved in two ways:
 1. Record the analog signal and visually catalog the shape of the amplitude envelope for each hex digit.  As it turns out, A and 8 are the most difficult hex digits to discern audibly.  However, it's very easy to see the plosive T at the end of the amplitude envelope for 8.  That makes it easy to discern from A, which lacks that feature.
-2. Brute force.  There are only sixteen possibile digits, and with thorough analysis the digits will become mostly apparent.  If you have trouble resolving the last few digits, you can try each possible flag.  So for example, if there are two remaining unidentified digits, each of which can be one of six possible values, there will be 6*5 ==> 30 possible flags.
+2. Brute force.  There are only sixteen possibile digits, and with thorough analysis the digits will become mostly apparent.  If you have trouble resolving the last few digits, you can try each possible flag.  So for example, if there are two remaining unidentified digits, each of which can only be one of six possible remaining values, there will be 6*5 ==> 30 possible flags.
 
 ## Visual catalog
 
