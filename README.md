@@ -18,5 +18,5 @@ I'll be posting writeups here as I finish them.  Articles without a link are sti
 * [It's a Kind of Magic, solution 1](Challenges/It's_a_Kind_of_Magic_solution_1.md)
 * [It's a Kind of Magic, solution 2](Challenges/It's_a_Kind_of_Magic_solution_2.md)
 * Phonic Frenzy
-* Race of a Lifetime
+* [Race of a Lifetime](Challenges/Race_of_a_Lifetime.md)
 * [Ransom 2.0](Challenges/Ransom_2.0.md)
