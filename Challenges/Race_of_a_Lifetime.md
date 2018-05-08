@@ -10,7 +10,7 @@ You are participating in a race around the world. The prize would be a personali
 
 ### Solution overview
 
-This race involves a series of instructions that include your current location and instructions about where to go next.  The solution below relies on calculating the great circle distance between two points on a globe, best possible speed based on the current mode of transportation, and faking the hourly updates based on a reasonable amount of progress.
+This race involves a series of instructions that include your current location and instructions about where to go next.  The solution below relies on calculating the great circle distance between two points on a globe, best possible speed based on the current mode of transportation, and using these two things to fake the hourly updates based on a reasonable amount of progress.
 
 ### Analysis
 
