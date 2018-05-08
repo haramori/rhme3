@@ -97,7 +97,7 @@ A heap is used starting at 0x225D.  Each device is represented in the heap using
 		DEVICE_MASTER *next;
 	} DEVICE_MASTER;
 
-* Each record in the heap, both master records and strings, consist of a two byte record length preceeding the actual record.  These prefix lengths are only used for tracking record sizes when deleted record are coalesced into bigger unused records.  The true field lengths for device names and pairing keys are stored in the master records.
+Each record in the heap, both master records and strings, consist of a two byte record length preceeding the actual record.  These prefix lengths are only used for tracking record sizes when deleted record are coalesced into bigger unused records.  The true field lengths for device names and pairing keys are stored in the master records.
 
 Here's an example of what the heap looks like after adding three devices:
 
