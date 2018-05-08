@@ -80,7 +80,7 @@ It looks as if control_interface() includes several checks that must be passed i
 
 ### Dynamic analysis
 
-The following was accomplished using the hardware debugging configuration described in the [Debugging AVR XMEGA raw binaries](../Preparation/debugging_raw_binaries.md) guide.
+The following was accomplished by debugging the unencrypted binary using the hardware debugging configuration described in the [Debugging AVR XMEGA raw binaries](../Preparation/debugging_raw_binaries.md) guide.
 
 Dynamic analysis reveals more information about how to pass the second check in control_interface():
 * The correct check value in 0x2192 is ensured by entering control_interface() at PC address 0x0185.  This is accomplished by overwriting the return pointer of modify_device() with 0x0185.  Also note that unlike all other word values, return pointers should be big endian.
