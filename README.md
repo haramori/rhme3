@@ -18,3 +18,9 @@
 * [Phonic Frenzy](Challenges/Phonic_Frenzy.md)
 * [Race of a Lifetime](Challenges/Race_of_a_Lifetime.md)
 * [Ransom 2.0](Challenges/Ransom_2.0.md)
+
+## Solved challenges, post-CTF
+
+A few things I didn't quite finish in time...
+
+* [Car Crash](Challenges/Car_Crash.md)
