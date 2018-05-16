@@ -11,10 +11,10 @@ In theory, this firmware mod was supposed to give you 30% extra horsepower and t
 ### Solution overview
 
 The solution to this challenge depends on two things:
-* Find a unique feature of your device that the unlock code is based on.
-* Set up an alterate device that can be used to generate unlock codes.  This should be another MCU of the same type (XMEGA-A4U), programmed with the unencrypted binary, and under hardware debugger control.
+* Find a unique feature of the XMEGA that the unlock code is based on.
+* Set up an alterate XMEGA device that can be used to generate unlock codes.  It should be programmed with the unencrypted binary and under hardware debugger control.
 
-Once these two things are in hand, the solution is to reverse engineer the unique device feature from the rhme3 board and feed it into the alternate device to generate the unlock code.
+Once these two things are in hand, the solution is to reverse engineer the unique feature from the rhme3 board and feed it into the alternate XMEGA device to generate the unlock code.
 
 ### Debugging setup
 
@@ -33,9 +33,9 @@ Load the encrypted binary onto the RHme3 board, and it gives a user ID (such as 
 
 	Already paid? Then enter the received unlock code here:
 
-Load the unencrypted binary onto the XMEGA-A4U device that you control, and it gives a different user ID (such as 3439350305001500).
+Load the unencrypted binary onto the alterate XMEGA device, and it gives a different user ID (such as 3439350305001500).
 
-Analyze the unencrypted binary on the device under your control using a PDI programmer, and view the production sigantures of the chip.  These are fully described in section 4.17 of the XMEGA AU MANUAL [2].  Examine the following components of the production signature:
+Analyze the unencrypted binary on the alterate XMEGA device using a PDI programmer, and view the production sigantures of the chip.  These are fully described in section 4.17 of the XMEGA AU MANUAL [2].  Examine the following components of the production signature:
 
 	Registers 3-5 of the lot number: 0x343935
 	Wafer number: 0x03
@@ -55,11 +55,11 @@ Decode the user ID from the RHme3 board as follows:
 
 Now you have the production signature bytes for the RHme3 board.
 
-Perform all of the following with the unencrypted binary on a device under your control:
+Perform all of the following with the unencrypted binary on the alterate XMEGA device:
 * Set a data breakpoint on one of the production signature memory locations (0x0D66) and run the debugger up to that point.
 * Single step until all of the production signature bytes are copied into RAM (at 0x3FD4-0x3FDE).
 * Manually overwrite the production signature bytes in RAM with the production signature bytes decoded from the RHme3 board user ID.
-* Continue the debugger.  The device under your control will calculate the unlock code for the RHme3 board.  Copy it from RAM (at 0x3F67-0x3F76).
+* Continue the debugging session.  The alterate XMEGA device will calculate the unlock code for the RHme3 board.  Copy it from RAM (at 0x3F67-0x3F76).
 
 Now enter the unlock code into the RHme3 board and get the flag.  It couldn't have been easier.
 
