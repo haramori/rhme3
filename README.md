@@ -10,6 +10,7 @@
 
 ## Solved challenges
 
+* [Tracing the Traces](Challenges/Tracing_the_Traces.md) (Qualifying Round)
 * [Back to the future](Challenges/Back_to_the_Future.md)
 * [Bluetooth Device Manager](Challenges/Bluetooth_Device_Manager.md)
 * [CAN Opener](Challenges/CAN_Opener.md)
