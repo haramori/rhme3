@@ -74,7 +74,7 @@ The lack of padding results in a condition in which most of the mask can be leak
 The general process is as follows:
 * Encrypt a plaintext of all zeros.  These will be XORed with the mask prior to encryption.  The XORed plaintext, which is really just the mask itself at this point, will remain in the input buffer.
 * Encrypt a blank message.  The actual plaintext will be the newline and null string terminator [0x0A,0x00] and bytes 2 thru 15 of the mask which are still sitting in the input buffer.
-  * Note: If the ciphertext includes any bytes with a value of 0x0A, decryption will fail due to the input being cut short by the newline.  If this happens, you have to reset the RHme3 board and start over from the first step.
+  * Note: If the resulting ciphertext includes any bytes with a value of 0x0A, the decryption in the next step will fail due to the input being cut short by the newline.  If you get this result, you have to reset the RHme3 board and start over from the first step.
 * Decrypt the blank message.  It will reveal all but the first two bytes of the mask.
 
 The following Python3 script accomplishes this stage of the attack.
