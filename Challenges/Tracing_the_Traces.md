@@ -1,6 +1,6 @@
-# Tracing the Traces
+# Tracing the Traces (Qualifying Round)
 
-Qualifying Round - 1pt
+Side Channel Analysis - 1pt
 
 ## Challenge text
 
