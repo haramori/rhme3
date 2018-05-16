@@ -186,7 +186,7 @@ Adjust alignment and reattack to get the first byte.
 
 The key can be recovered by XORing the mask with the masked key.  However, the first two bytes of the mask need to be brute forced.  The following Python3 script accomplishes this by encrypting a message repeatedly, with masking, until it matches the same message encrypted by the RHme3 board.  To do this, an implementation of AES is needed in which you can encrypt a single block of 16 bytes without padding.  I have my own implementation of AES that for export control reasons I cannot share.  I used my own because the state of AES implementations in Python3 is not happy.  Your mileage may vary.
 
-Note: It is strongly recommended that you **do not implement** your own crypto for production code.  However, I recommend that you **do implement** your own crypto for instructional and analytic purposes.  You will learn a lot from doing so and have the benefit of CTF-ready crypto that is completely under your control.
+Note: It is strongly recommended that you **do not implement** your own crypto for production code.  However, I recommend that you **do implement** your own crypto for instructional and analytic purposes.  You will learn a lot from doing so and have the benefit of CTF-ready crypto that is completely under your control.  For AES, you'll need the FIPS-197 standard [2].
 
 	import sys
 	sys.path.append("E:\\Tech\\mylib")
@@ -244,3 +244,4 @@ And finally, here's the script output with the resulting mask and key.
 ## References
 
 1. [8-bit Atmel XMEGA AU Microcontroller XMEGA AU MANUAL, 04/2013](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8331-8-and-16-bit-AVR-Microcontroller-XMEGA-AU_Manual.pdf)
+2. [NIST FIPS-197 Advanced Encryption Standard (AES)](https://nvlpubs.nist.gov/nistpubs/fips/nist.fips.197.pdf)
