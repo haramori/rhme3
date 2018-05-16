@@ -10,7 +10,7 @@ These traces (.trs and .mat format) were captured from a hardware device perform
 
 ### Recon
 
-I'm not familiar with the .trs file format.  Maybe this format is for a tool used by Riscure?  Googling "riscure trs format" returns [GitHub - Riscure/Jlsca: Side-channel toolkit in Julia](https://github.com/Riscure/Jlsca).  Perhaps it's best if we use this tool?
+I'm not familiar with the .trs file format.  Maybe this has something to do with Riscure?  Googling "riscure trs format" returns [GitHub - Riscure/Jlsca: Side-channel toolkit in Julia](https://github.com/Riscure/Jlsca).  Perhaps it's best if we use this tool?
 
 ### Analysis
 
