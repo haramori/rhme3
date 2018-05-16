@@ -124,7 +124,7 @@ Here's a breakdown of the master record for device 0 in the example above:
 
 Our goal is to overwrite the lengths and pointers for the device name and pairing key within one of the master records, and then use those to read and write arbitrary locations in RAM.
 
-A bug allows for any device name or pairing key to be replaced with a string two bytes larger when choosing to modify a device through the main menu.  The larger string will overwrite the heap record size prefix of the heap record following the updated string.
+A bug allows for any device name or pairing key to be replaced with a string two bytes larger when choosing to modify a device through the main menu.  The larger string will overwrite the size prefix of the heap record following the updated string.
 
 ### Attack
 
