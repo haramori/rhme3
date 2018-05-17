@@ -23,6 +23,38 @@
 * SJ1 (solder jumper)
 * JP4 (labeled "uC/VCC")
 
+### Arduino pinout
+
+A map of board-level connections is useful when probing and identifying signals.
+
+	IO   XMEGA  Most likely               Internal
+	pin  pin    function                  connection
+	===  =====  ===========               ==========
+	RST    35   RESET/PDI_CLK             3V3 pullup
+	A0     41   PA1/ADC1/AC1
+	A1     42   PA2/ADC2/AC2
+	A2     43   PA3/ADC3/AC3
+	A3     44   PA4/ADC4/AC4
+	A4      1   PA5/ADC5/AC5
+	A5      2   PA6/ADC6/AC6
+	D0     12   PC2/USARTC0_RX            USB_TX
+	D1     13   PC3/USARTC0_TX            USB_RX
+	D2     10   PC0/SDA
+	D3     11   PC1/SCL
+	D4     22   PD2/USARTD0_RX
+	D5     23   PD3/USARTD0_TX
+	D6     24   PD4/SPID_SS               CAN1_CS
+	D7      5   PB2/ADC10/DAC0
+	D8      7   PB3/ADC11/DAC1
+	D9     14   PC4/SPIC_SS               CAN2_CS
+	D10    15   PC5/SPIC_MOSI             CAN2_MOSI
+	D11    25   PD5/SPID_MOSI             CAN1_MOSI
+	D12    26   PD6/USARTD1_RX/SPID_MISO  CAN1_MISO
+	D13    27   PD7/USARTD1_TX/SPID_SCK   CAN1_SCK
+	AREF   40   PA0/ADC0/AC0/AREF
+	SDA                                   D2
+	SCL                                   D3
+
 ## Notes
 
 Most of the board can be powered by a 3.3V supply, but the MCP25625 requires a 5V supply to operate the transciever circuits.  Running the MCP25625 at 3.3V won't damage it, but CAN won't work.
