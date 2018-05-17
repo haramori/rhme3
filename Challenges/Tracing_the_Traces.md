@@ -26,7 +26,7 @@ Open the Julia REPL and install Jlsca as follows:
 
 	Pkg.clone("https://github.com/Riscure/Jlsca")
 
-A basic CPA attack can be performed using the script Jlsca\examples\main-noninc.jl.  However, the traces need to be aligned first.  Uncomment the alignment pass section, and adjust maxShift and referenceOffset as needed.
+A basic correlation attack can be performed using the script Jlsca\examples\main-noninc.jl.  However, the traces need to be aligned first.  Uncomment the alignment pass section, and adjust maxShift and referenceOffset as needed.
 
 	# # example alignment pass
 	maxShift = 1000
