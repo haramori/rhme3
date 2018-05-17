@@ -24,4 +24,5 @@
 
 A few things I didn't quite finish in time...
 
+* Auto-psy (In Progress)
 * [Car Crash](Challenges/Car_Crash.md)
