@@ -21,7 +21,7 @@ The leakage model for the masked key should therefore be:
 
 So HW:SboxOutput can be used to reveal the masked key.
 
-This solution also relies on the lack of padding used by the encryption/decryption process, which can be leveraged to reveal the mask by using carefully crafted input.
+This solution also relies on the encryption/decryption process repeatedly reusing an uninitialized buffer, which can be leveraged to reveal the mask by using carefully crafted input. Padding an incomplete block of data would help avoid this problem, but padding isn't used.
 
 This will be a three stage attack:
 * Perform an exploit attack to reveal the mask.
@@ -65,11 +65,9 @@ The complete setup should look like this.
 * Encrypted messages can be decrypted back to the original messages up until the RHme3 board is reset.  A new mask is assumed to be randomly selected every time the board is reset.  Because of this, the entire attack must take place without resetting the board.
 * Message that include a value of 0x0A in any byte position will fail to encrypt/decrypt properly.  This will be misinterpreted as a newline character and will shorten the message.  It is assumed that only the message up to and including the newline byte is encrypted/decrypted, along with anything remaining in the buffer after the newline.
 * Messages that are shorter than 16 bytes behave similarly.
-* Additional testing reveals that padding is not used, and when a message shorter than 16 bytes or a message with a newline byte is used a portion of the previous message following the newline byte is revealed.  With a message of all zeros, we can exploit this to leak part of the mask.
+* Additional testing reveals that the input buffer is reused without reinitializing it, and when a message shorter than 16 bytes or a message with a newline byte is used a portion of the previous message following the newline byte is revealed.  With a message of all zeros, we can exploit this to leak part of the mask.
 
 ### Attack Stage 1: Reveal the mask
-
-The lack of padding results in a condition in which most of the mask can be leaked when the device is given a message shorter than 16 bytes.
 
 The general process is as follows:
 * Encrypt a plaintext of all zeros.  These will be XORed with the mask prior to encryption.  The XORed plaintext, which is really just the mask itself at this point, will remain in the input buffer.
